@@ -1,0 +1,45 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked /><label for="tab-1" class="tab">Inscripción a
+			curso</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up" /><label for="tab-2" class="tab"></label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+
+				<div class="group">
+					<label for="user" class="label">Curso</label>
+					<mat-form-field appearance="fill" >
+						<mat-label style="color:white;">Seleciona el curso</mat-label>
+						<mat-select style="color:white;">
+							<mat-option *ngFor="let food of foods" [value]="food.value" style="min-width: 100%">
+								{{food.viewValue}}
+							</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+				
+
+				<div class="group">
+					<label for="user" class="label">Cedula</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Nombre Completo</label>
+					<input id="pass" type="text" class="input" data-type="password">
+				</div>
+
+
+				<div class="group">
+					<input type="submit" class="button" value="Inscribir">
+				</div>
+				<div class="hr"></div>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<app-footer></app-footer>
