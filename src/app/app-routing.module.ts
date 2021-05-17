@@ -8,6 +8,9 @@ import { InscripcionesComponent } from './forms/inscripciones/inscripciones.comp
 import { ConsultavigenciaComponent } from './forms/consultavigencia/consultavigencia.component';
 import { MatSelectModule } from '@angular/material/select';
 import { SomosComponent } from './forms/somos/somos.component';
+import { RegisterComponent } from './forms/register/register.component';
+import { MainComponent } from './index/main/main.component'
+import { ShopComponent } from './cart/shop/shop.component';
 const routes: Routes = [
   { path: '',component: HomeComponent  },
   { path: 'login', component: LoginComponent },
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'inscripciones', component: InscripcionesComponent},
   { path: 'consulta', component:ConsultavigenciaComponent},
   { path: 'conocenos', component:SomosComponent},
+  { path: "register", component:RegisterComponent},
+  { path: "shop",component:ShopComponent},
+  { path: "main", component:MainComponent},
 ];
 
 @NgModule({

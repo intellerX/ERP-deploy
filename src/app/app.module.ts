@@ -12,6 +12,10 @@ import { InscripcionesComponent } from './forms/inscripciones/inscripciones.comp
 import { ConsultavigenciaComponent } from './forms/consultavigencia/consultavigencia.component';
 import { SomosComponent } from './forms/somos/somos.component';
 import { AnimationComponent } from './components/animation/animation.component';
+import { RegisterComponent } from './forms/register/register.component';
+import { TablePersonalComponent } from './components/table-personal/table-personal.component';
+import { IndexModule } from './index/index.module';
+
 
 @NgModule({
   declarations: [
@@ -24,11 +28,14 @@ import { AnimationComponent } from './components/animation/animation.component';
     InscripcionesComponent,
     ConsultavigenciaComponent,
     SomosComponent,
-    AnimationComponent
+    AnimationComponent,
+    RegisterComponent,
+    TablePersonalComponent,
     ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    IndexModule
   ],
   providers: [],
   bootstrap: [AppComponent]
