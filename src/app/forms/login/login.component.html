@@ -7,7 +7,7 @@
 <div class="testbox">
 	<h1>Login</h1>
 
-	<form action="#">
+	<form [formGroup]="form" (ngSubmit)="submit()">
 		<hr>
 		<div class="accounttype">
 			<input type="radio" value="None" id="radioOne" name="account" checked />
@@ -17,11 +17,11 @@
 		</div>
 		<hr>
 		<label id="icon" for="name"><i class="icon-envelope "></i></label>
-		<input type="text" name="name" id="name" placeholder="Email" required />
+		<input formControlName="email" type="text" name="email" id="email" placeholder="Email" required />
 		<label id="icon" for="name"><i class="icon-shield"></i></label>
-		<input type="password" name="name" id="name" placeholder="Contraseña" required />
+		<input formControlName="password" type="password" name="name" id="name" placeholder="Contraseña" required />
 		
-		<button (click)="clickEvent()" class="button">Aceptar</button>
+		<button class="button" type="submit" >Aceptar</button>
 
 
 		<br>

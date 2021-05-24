@@ -71,7 +71,7 @@ html {
 .testbox {
 	margin: 20px auto;
 	width: 343px;
-	height: 90%;
+	height: 700px;
 	background-color: #ebebeb;
 	-webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
 	-moz-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
@@ -137,7 +137,8 @@ hr {
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+input[type="number"] {
 	width: 200px;
 	height: 38px;
 	-webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
