@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
     if (this.form.valid) {
       if (this.form.controls.password.value === this.form.controls.password2.value) {
         delete this.form.value["password2"];
-        this.form.value["module"]=null;
+        this.form.value["module"]=[];
         this.enterpriseService.post(this.form.value).subscribe({
           next: value => {
             console.log(value);
