@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { User } from '@app/_models';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
-import { map } from 'rxjs/operators';
-
+import { AuthService } from '../../services/auth.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,12 +18,11 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', [Validators.required, Validators.minLength(8)]),
 
 
+
   });
 
-  constructor(
-    private router: Router,
-    private http: HttpClient
-  ) { }
+  constructor(private authService: AuthService ) { }
+
   clickEvent() {
     Swal.fire({
       icon: 'error',
@@ -39,10 +34,15 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-
-
     if (this.form.valid) {
-      this.login(this.form.controls.email, this.form.controls.password);
+      this.form.value["keep_logged_in"]=true;
+      this.authService.post(this.form.value).subscribe({
+        next: value => {
+          console.log(value);
+        }, error: error => {
+          console.log(error);
+        }
+      })
     }
     else {
       Object.keys(this.form.controls).forEach(key => {
@@ -55,18 +55,10 @@ export class LoginComponent implements OnInit {
         }
         console.log(this.form.controls[key]);
       });
-
-
     }
 
   }
 
-  login(email, password) {
-    return this.http.post<User>(`erp-pg2-backend.herokuapp.com/api/v1/enterprises`, { email, password })
-      .pipe(map(user => {
-        localStorage.setItem('user', JSON.stringify(user));
-        return user;
-      }));
-  }
+
 
 }

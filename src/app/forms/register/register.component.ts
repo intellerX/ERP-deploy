@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { EnterpriseService } from '../../services/enterprise.service'
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,7 +12,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private enterpriseService: EnterpriseService) { }
+
+
 
   form = new FormGroup({
 
@@ -23,11 +28,11 @@ export class RegisterComponent implements OnInit {
 
     nit: new FormControl('', [Validators.required, Validators.minLength(5)]),
 
-    departamento: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    state: new FormControl('', [Validators.required, Validators.minLength(3)]),
 
-    ciudad: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    city: new FormControl('', [Validators.required, Validators.minLength(3)]),
 
-    direccion: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    address: new FormControl('', [Validators.required, Validators.minLength(3)]),
 
 
   });
@@ -42,11 +47,18 @@ export class RegisterComponent implements OnInit {
 
   submit() {
 
-    console.log(this.form.controls);
-
+    
     if (this.form.valid) {
       if (this.form.controls.password.value === this.form.controls.password2.value) {
-        console.log("valido")
+        delete this.form.value["password2"];
+        this.form.value["module"]=null;
+        this.enterpriseService.post(this.form.value).subscribe({
+          next: value => {
+            console.log(value);
+          }, error: error => {
+            console.log(error);
+          }
+        })
 
       }
       else {
@@ -69,7 +81,7 @@ export class RegisterComponent implements OnInit {
         console.log(this.form.controls[key]);
       });
 
-      
+
     }
 
   }
@@ -80,5 +92,7 @@ export class RegisterComponent implements OnInit {
   alert() {
     console.log("nice");
   }
+
+
 
 }
