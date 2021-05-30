@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.authService.post(this.form.value).subscribe({
         next: value => {
           console.log(value);
+          
         }, error: error => {
           console.log(error);
         }
