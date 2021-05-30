@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { RouterTestingModule } from '@angular/router/testing';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  Empresa:string;
+  Name = 'Usuario';
+
+
+  constructor(private cookieService: CookieService) { }
 
   ngOnInit(): void {
+    this.Empresa = this.cookieService.get('company');
+
   }
 
 }

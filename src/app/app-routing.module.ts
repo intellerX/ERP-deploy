@@ -11,6 +11,13 @@ import { SomosComponent } from './forms/somos/somos.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { MainComponent } from './index/main/main.component'
 import { ShopComponent } from './cart/shop/shop.component';
+
+import {PersonalTableComponent} from './index/personal-table/personal-table.component';
+import {NominaTableComponent} from './index/nomina-table/nomina-table.component'
+import {ConfigTableComponent} from './index/config-table/config-table.component';
+import {InformesTableComponent} from './index/informes-table/informes-table.component';
+import {EvaluacionTableComponent} from './index/evaluacion-table/evaluacion-table.component'
+import { RouterTestingModule } from '@angular/router/testing';
 const routes: Routes = [
   { path: '',component: HomeComponent  },
   { path: 'login', component: LoginComponent },
@@ -20,11 +27,18 @@ const routes: Routes = [
   { path: 'conocenos', component:SomosComponent},
   { path: "register", component:RegisterComponent},
   { path: "shop",component:ShopComponent},
-  { path: "main", component:MainComponent},
+  { path: "main", component:MainComponent, children:[
+    { path: "personal", component:PersonalTableComponent},
+    { path: "nomina", component:NominaTableComponent},
+    { path: "config", component:ConfigTableComponent},
+    { path: "informes", component:InformesTableComponent},
+    { path: "evaluaciones", component:EvaluacionTableComponent}
+
+  ]},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterTestingModule, RouterModule.forRoot(routes)],
   exports: [RouterModule,MatSelectModule,BrowserAnimationsModule]
 })
 export class AppRoutingModule { }
