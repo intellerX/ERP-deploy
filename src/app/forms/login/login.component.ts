@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
           this.cookieService.set( 'token', value['token'] );
 
 
-          this.router.navigate(['/main']);
+          this.router.navigate(['/main/personal']);
           
         }, error: error => {
           console.log(error);
