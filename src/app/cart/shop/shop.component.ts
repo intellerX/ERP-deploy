@@ -30,7 +30,7 @@ export class ShopComponent implements OnInit {
         var inputValue2 = (<HTMLInputElement>document.getElementById('swal-input2')).value;
 
         return [          
-          inputValue,inputValue2
+          "Comprueba los Siguientes campos: ",inputValue,inputValue2
         ]
       }
     })
