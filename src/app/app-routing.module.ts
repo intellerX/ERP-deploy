@@ -10,7 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { SomosComponent } from './forms/somos/somos.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { MainComponent } from './index/main/main.component'
-import { ShopComponent } from './cart/shop/shop.component';
+import { ShopComponent } from './forms/shop/shop.component';
 
 import {PersonalTableComponent} from './index/personal-table/personal-table.component';
 import {NominaTableComponent} from './index/nomina-table/nomina-table.component'

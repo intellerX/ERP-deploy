@@ -18,6 +18,8 @@ import { AnimationComponent } from './components/animation/animation.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { TablePersonalComponent } from './components/table-personal/table-personal.component';
 import { IndexModule } from './index/index.module';
+import { ShopComponent } from './forms/shop/shop.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { IndexModule } from './index/index.module';
     AnimationComponent,
     RegisterComponent,
     TablePersonalComponent,
+    ShopComponent,
     ],
   imports: [
     BrowserModule,
@@ -41,8 +44,10 @@ import { IndexModule } from './index/index.module';
     IndexModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
+  exports: [NavBarComponent,FooterComponent],
   providers: [ CookieService ],
   bootstrap: [AppComponent]
 })

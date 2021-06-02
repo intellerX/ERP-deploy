@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   });
 
-  constructor(private cookieService: CookieService,private authService: AuthService, private router: Router ) { }
+  constructor(private cookieService: CookieService, private authService: AuthService, private router: Router) { }
 
   clickEvent() {
     Swal.fire({
@@ -40,18 +40,53 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
+    this.cookieService.deleteAll();
+
+
+    let timerInterval
+    Swal.fire({
+      title: 'Cargando',
+      html: ' <b></b> ',
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+          const content = Swal.getHtmlContainer()
+          if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+              b.textContent = Swal.getTimerLeft()
+            }
+          }
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('Terminado')
+      }
+    })
+
+
+
     if (this.form.valid) {
-      this.form.value["keep_logged_in"]=true;
+      this.form.value["keep_logged_in"] = true;
       this.authService.post(this.form.value).subscribe({
         next: value => {
-          console.log(value);
-          this.cookieService.set( 'company', value['name'] );
-          this.cookieService.set( 'refresh', value['refresh'] );
-          this.cookieService.set( 'token', value['token'] );
+          //console.log(value);
+          this.cookieService.set('company', value['name']);
+          this.cookieService.set('refresh', value['refresh']);
+          this.cookieService.set('token', value['token']);
+          this.cookieService.set('id', value['id']);
+          this.cookieService.set('modules', JSON.stringify(value['modules']));
 
 
           this.router.navigate(['/main/personal']);
-          
+
         }, error: error => {
           console.log(error);
           Swal.fire({

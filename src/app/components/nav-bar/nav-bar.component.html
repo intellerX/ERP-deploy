@@ -1,25 +1,36 @@
+<script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+
 <nav class="main-nav">
-  <img src="" alt="ERP" class="logo">
+    <img src="" alt="ERP" class="logo">
 
-  <ul class="main-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Información</a></li>
-      <li><a href="/login">Plataforma</a></li>
-      <li><a href="/shop">Tienda</a></li>
-      <li><a href="/shop">Paquetes</a></li>
-      <li><a href="#">Soporte</a></li>
-  </ul>
+    <ul class="main-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Información</a></li>
+        <li><a href="/login">Plataforma</a></li>
+        <li><a href="/shop">Tienda</a></li>
+        <li><a href="/shop">Paquetes</a></li>
+        <li><a href="#">Soporte</a></li>
+    </ul>
 
-  <ul class="right-menu">
-      <li>
-          <a href="#">
-              <i class="fas fa-search"></i>
-          </a>
-      </li>
-      <li>
-          <a href="/login">
-              <i class="fas fa-shopping-cart">Login</i>
-          </a>
-      </li>
-  </ul>
+    <ul class="right-menu">
+        <li>
+            <a href="#">
+                <i class="fas fa-search"></i>
+            </a>
+        </li>
+
+        <div ngbDropdown>
+            <button href="/login" class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>{{app_name}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownConfig" class="nav-dropdown-toggle">
+                <button class="dropdown-item" type="button">Perfil</button>
+                <button class="dropdown-item" type="button">Home</button>
+                <button class="dropdown-item" type="button" (click)="endSession()" href="/">{{end_session}}</button>
+            </div>
+        </div>
+        
+        
+    </ul>
+
+    
 </nav>

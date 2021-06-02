@@ -96,4 +96,11 @@
     color: #333;
   }
   
+  .btn-outline-primary.dropdown-toggle:focus , .btn-outline-primary.dropdown-toggle{
+    background-color: #333;
+  }
+
+  .nav-dropdown-toggle button{
+    padding: 3%;
+  }
  
