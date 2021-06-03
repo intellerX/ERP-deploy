@@ -37,7 +37,8 @@ export class PersonalTableComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.personalService.get().subscribe({
       next: value => {
-        //console.log(value);
+        console.log(value);
+        this.elements = value["results"];
         this.modules = JSON.parse(this.cookieService.get('modules'));
 
         console.log(this.modules);
@@ -72,18 +73,24 @@ export class PersonalTableComponent implements OnInit {
       title: 'Datos:',
       html:
         '<input placeholder="Nombre" id="swal-input1" class="swal2-input"> ' +
-        '<input placeholder="Fecha" id="swal-input2" class="swal2-input">' +    
+        '<input placeholder="Fecha Nacimiento" id="swal-input2" class="swal2-input">' + 
+        
+        '<input placeholder="Email" id="swal-input2" class="swal2-input">' +  
+        '<input placeholder="Telefono" id="swal-input2" class="swal2-input">' +  
+        '<input placeholder="Dirección" id="swal-input2" class="swal2-input">' +  
+        '<input placeholder="Fecha" id="swal-input2" class="swal2-input">' +  
+        '<input placeholder="Ciudad" id="swal-input2" class="swal2-input">' +
+        '<input placeholder="Departamentp" id="swal-input2" class="swal2-input">' +  
+        '<input placeholder="Eps" id="swal-input2" class="swal2-input">' +  
         '<input placeholder="CC" id="swal-input4" class="swal2-input">'
         ,
       input: 'select',
       inputOptions: {
         'Cargos': {
-          one: 'Compras',
-          two: 'Ventas',
-          tree: 'RRHH',
-          four: 'Operación',
-          five: 'Supervisor'
-
+          one: 'Supervisor',
+          two: 'Gerente',
+          tree: 'Compras',
+          four: 'Jefe de Proyecto'
         },
       },
       inputPlaceholder: 'Cargo',

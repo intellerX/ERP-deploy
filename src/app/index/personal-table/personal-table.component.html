@@ -9,10 +9,10 @@
     </thead>
     <tbody *ngIf="module_actual">
       <tr *ngFor="let el of elements">
-        <td data-label="Account">{{el.nombre}}</td>
-        <td data-label="Due Date">{{el.fecha}}</td>
-        <td data-label="Amount">{{el.cargo}}</td>
-        <td data-label="Period">{{el.cc}}</td>
+        <td data-label="Account">{{el.name}}</td>
+        <td data-label="Due Date">{{el.birthdate}}</td>
+        <td data-label="Amount">{{el.job_tittle}}</td>
+        <td data-label="Period">{{el.document}}</td>
         <td>
           <button type="button" class="btn btn-danger">Eliminar</button>
           <button type="button" class="btn btn-primary" (click)="RegistrarPersonal()">Editar</button>
