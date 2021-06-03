@@ -2,52 +2,24 @@
   <h1>Personal</h1>
   <table>
     <thead>
-      <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Cargo</th>
-        <th scope="col">CC</th>
-        <th scope="col">Botones</th>
-
-
+      <tr >
+        <th scope="col" *ngFor="let head of headElements">{{head}}</th>
+        
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <td data-label="Account">Luis Andres Gomez</td>
-        <td data-label="Due Date">04/01/1997</td>
-        <td data-label="Amount">Gerente</td>
-        <td data-label="Period">078955546</td>
+    <tbody *ngIf="module_actual">
+      <tr *ngFor="let el of elements">
+        <td data-label="Account">{{el.nombre}}</td>
+        <td data-label="Due Date">{{el.fecha}}</td>
+        <td data-label="Amount">{{el.cargo}}</td>
+        <td data-label="Period">{{el.cc}}</td>
         <td>
           <button type="button" class="btn btn-danger">Eliminar</button>
-          <button type="button" class="btn btn-primary">Editar</button>
+          <button type="button" class="btn btn-primary" (click)="RegistrarPersonal()">Editar</button>
         </td>
-
-
       </tr>
 
-      <tr>
-        <td data-label="Account">Carlos Andres Sepulveda</td>
-        <td data-label="Due Date">08/01/1997</td>
-        <td data-label="Amount">Supervisor</td>
-        <td data-label="Period">089535546</td>
-        <td>
-          <button type="button" class="btn btn-danger">Eliminar</button>
-          <button type="button" class="btn btn-primary">Editar</button>
-        </td>
-
-      </tr>
-      <tr>
-        <td data-label="Account">Pedro Henao</td>
-        <td data-label="Due Date">04/01/1997</td>
-        <td data-label="Amount">Jefe de Proyecto</td>
-        <td data-label="Period">01155546</td>
-        <td>
-          <button type="button" class="btn btn-danger">Eliminar</button>
-          <button type="button" class="btn btn-primary">Editar</button>
-        </td>
-
-      </tr>
+      
 
     </tbody>
   </table>

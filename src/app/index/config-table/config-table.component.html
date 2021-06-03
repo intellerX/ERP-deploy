@@ -10,7 +10,7 @@
 
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="module_actual">
             <tr>
                 <td data-label="Account">Supervisor</td>
                 
@@ -59,7 +59,7 @@
     <br>
     <br>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-success">Agregar</button>
+        <button type="button" class="btn btn-success" (click)="addCargo()">Agregar</button>
     </div>
 
 

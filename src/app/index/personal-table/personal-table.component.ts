@@ -11,10 +11,28 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class PersonalTableComponent implements OnInit {
 
+  elements: any = [
+    {id: 1, nombre: 'Luis Andres Gomez', fecha: '04/01/1997', cargo: 'Gerente' , cc: '111278937'},
+    {id: 2, nombre: 'Carlos Andres Sepulveda', fecha: '0/01/2001', cargo: 'Supervisor', cc: '991278937'},
+    {id: 3, nombre: 'Pedro Henao', fecha: '04/01/1997', cargo: 'Jefe de Proyecto', cc: '101278937'},
+  ];
+
+  headElements = ['NOMBRE', 'FECHA', 'CARGO', 'CC', 'BOTONES'];
+
   modules = [];
-  module_employments = false;
+  module_actual = false;
 
   constructor(private personalService: PersonalService,private cookieService: CookieService) { }
+
+  valitadeModule() {
+    for (let index = 0; index < this.modules.length; index++) {
+      if (this.modules[index] == "Empleados") {
+        console.log("si");           
+        this.module_actual = true;
+      }         
+    }
+
+  }
 
   ngOnInit(): void {
     console.log(this.personalService.get().subscribe({
@@ -24,14 +42,9 @@ export class PersonalTableComponent implements OnInit {
 
         console.log(this.modules);
         
-        for (let index = 0; index < this.modules.length; index++) {
-          if (this.modules[index] == "Empleados") {
-            console.log("si");           
-            this.module_employments = true;
-          }         
-        }
+        this.valitadeModule();
 
-        if (this.module_employments) {
+        if (this.module_actual) {
           
         }
         else{

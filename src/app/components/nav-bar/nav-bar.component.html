@@ -23,8 +23,8 @@
         <div ngbDropdown>
             <button href="/login" class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>{{app_name}}</button>
             <div ngbDropdownMenu aria-labelledby="dropdownConfig" class="nav-dropdown-toggle">
-                <button class="dropdown-item" type="button">Perfil</button>
-                <button class="dropdown-item" type="button">Home</button>
+                <a class="dropdown-item"  href="/main/personal">Perfil</a>
+                <a class="dropdown-item"  href="/">Home</a>
                 <button class="dropdown-item" type="button" (click)="endSession()" href="/">{{end_session}}</button>
             </div>
         </div>

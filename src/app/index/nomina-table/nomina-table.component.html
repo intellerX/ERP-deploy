@@ -11,14 +11,14 @@
 
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="module_actual">
             <tr>
                 <td data-label="Account">Luis Andres Gomez</td>
                 <td data-label="Due Date">12'544.197</td>
                 <td data-label="Amount">Gerente</td>
                 
                 <td>
-                    <button type="button" class="btn btn-danger">Editar</button>
+                    <button type="button" class="btn btn-danger" (click)="addNomina()">Editar</button>
                     
                 </td>
 
@@ -31,7 +31,7 @@
                 <td data-label="Amount">Supervisor</td>
                 
                 <td>
-                    <button type="button" class="btn btn-danger">Editar</button>
+                    <button type="button" class="btn btn-danger" (click)="addNomina()">Editar</button>
                     
                 </td>
 
@@ -42,7 +42,7 @@
                 <td data-label="Amount">Jefe de Proyecto</td>
                 
                 <td>
-                    <button type="button" class="btn btn-danger">Editar</button>
+                    <button type="button" class="btn btn-danger" (click)="addNomina()">Editar</button>
                     
                 </td>
 
@@ -61,7 +61,7 @@
     <br>
     <br>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-success">Agregar</button>
+        <button type="button" class="btn btn-success" (click)="addNomina()">Agregar</button>
     </div>
 
 

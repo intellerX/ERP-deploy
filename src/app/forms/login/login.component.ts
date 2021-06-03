@@ -43,32 +43,12 @@ export class LoginComponent implements OnInit {
     this.cookieService.deleteAll();
 
 
-    let timerInterval
     Swal.fire({
-      title: 'Cargando',
-      html: ' <b></b> ',
-      timer: 2000,
+      title: 'Cargando...',     
       timerProgressBar: true,
       didOpen: () => {
-        Swal.showLoading()
-        timerInterval = setInterval(() => {
-          const content = Swal.getHtmlContainer()
-          if (content) {
-            const b = content.querySelector('b')
-            if (b) {
-              b.textContent = Swal.getTimerLeft()
-            }
-          }
-        }, 100)
+        Swal.showLoading()        
       },
-      willClose: () => {
-        clearInterval(timerInterval)
-      }
-    }).then((result) => {
-      /* Read more about handling dismissals below */
-      if (result.dismiss === Swal.DismissReason.timer) {
-        console.log('Terminado')
-      }
     })
 
 
@@ -86,6 +66,7 @@ export class LoginComponent implements OnInit {
 
 
           this.router.navigate(['/main/personal']);
+          Swal.close()
 
         }, error: error => {
           console.log(error);

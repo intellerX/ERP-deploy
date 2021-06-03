@@ -14,7 +14,7 @@
 
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="module_actual">
             <tr>
                 <td data-label="Nombre">Luis Andres Gomez</td>
                 <td data-label="Fecha">04/01/1997</td>
@@ -25,7 +25,7 @@
 
                 <td>
                    
-                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-primary" (click)="addEvaluation()">Editar</button>
                 </td>
 
 
@@ -42,7 +42,7 @@
 
                 <td>
                    
-                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-primary" (click)="addEvaluation()">Editar</button>
                 </td>
 
             </tr>
@@ -57,7 +57,7 @@
 
                 <td>
                    
-                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-primary" (click)="addEvaluation()">Editar</button>
                 </td>
 
             </tr>
@@ -75,7 +75,7 @@
     <br>
     <br>
     <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-success">Agregar</button>
+        <button type="button" class="btn btn-success" (click)="addEvaluation()">Agregar</button>
     </div>
 
 
