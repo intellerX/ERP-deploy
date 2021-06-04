@@ -16,7 +16,6 @@ export class PersonalService {
   }
 
   get() {
-
     return this.http.get(environment.backendUrl + "employer", { headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.cookieService.get('token') }) })
   }
 }

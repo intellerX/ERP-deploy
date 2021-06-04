@@ -1,4 +1,5 @@
 <div class="container">
+    
     <h1>Cargos</h1>
     <table>
         <thead>
@@ -28,6 +29,61 @@
             </tr>
             <tr>
                 <td data-label="Account">Jefe de Proyecto</td>
+                <td>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <br>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+        <button type="button" class="btn btn-secondary">Atrás</button>
+        <button type="button" class="btn btn-secondary">Siguiente</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success" (click)="addCargo()">Agregar</button>
+    </div>
+
+
+</div>
+
+<div class="container">
+    
+    <h1>Tipos de Evaluaciones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Tipos de Evaluaciones</th>                
+                <th scope="col">Botones</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="module_actual">
+            <tr>
+                <td data-label="Account">Asistencia</td>         
+                <td>
+                    <button type="button" class="btn btn-danger">Eliminar</button>                    
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Account">Rendimiento</td>                
+                <td>
+                    <button type="button" class="btn btn-danger">Eliminar</button>                    
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Account">RRHH</td>
+                <td>
+                    <button type="button" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="Account">Actitud</td>
                 <td>
                     <button type="button" class="btn btn-danger">Eliminar</button>
                 </td>

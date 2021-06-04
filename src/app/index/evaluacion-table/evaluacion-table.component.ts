@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
-import { PersonalService } from '../../services/personal.service';
+import { EvaluacionService } from '../../services/evaluacion.service';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -11,10 +11,14 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class EvaluacionTableComponent implements OnInit {
 
+  elements: any = [  ];
+
+  headElements = ['NOMBRE', 'FECHA EVALUACIÓN', 'TIPO', 'EVALUADO POR', 'CALIFICACIÓN', 'COMENTARIOS', 'BOTONES'];
+
   modules = [];
   module_actual = false;
 
-  constructor(private personalService: PersonalService, private cookieService: CookieService) { }
+  constructor(private evaluacionService: EvaluacionService, private cookieService: CookieService) { }
 
   valitadeModule() {
     for (let index = 0; index < this.modules.length; index++) {
@@ -37,8 +41,36 @@ export class EvaluacionTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.modules = JSON.parse(this.cookieService.get('modules'));
-    this.valitadeModule();
+    console.log(this.evaluacionService.get().subscribe({
+      next: value => {
+        console.log(value);
+        this.elements = value["results"];
+        this.modules = JSON.parse(this.cookieService.get('modules'));
+
+        console.log(this.modules);
+        
+        this.valitadeModule();
+
+        if (this.module_actual) {
+          
+        }
+        else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Debes comprar el módulo PERSONAL en la tienda'
+          })
+        }
+      
+        
+
+      }, error: error => {
+        console.log(error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Debes comprar el módulo PERSONAL en la tienda'
+        })
+      }
+    }))
 
   }
 

@@ -3,64 +3,22 @@
     <table>
         <thead>
             <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Fecha Evaluación</th>
-                <th scope="col">Tipo</th>
-                <th scope="col">Evaluado Por</th>
-                <th scope="col">Calificación</th>
-                <th scope="col">Comentarios</th>
-                <th scope="col">Botones</th>
-
-
+                <th scope="col" *ngFor="let head of headElements">{{head}}</th>
             </tr>
         </thead>
         <tbody *ngIf="module_actual">
-            <tr>
-                <td data-label="Nombre">Luis Andres Gomez</td>
-                <td data-label="Fecha">04/01/1997</td>
-                <td data-label="Tipo">Asistencia</td>
-                <td data-label="Evaluado">Carlos Andres Sepulveda</td>
-                <td data-label="Calificacion">8.5</td>
-                <td data-label="Comentarios">Asitiió a todas las practicas</td>
-
+            <tr *ngFor="let el of elements">
+                <td data-label="Account">{{el.employee_evaluated.name}}</td>
+                <td data-label="Due Date">{{el.creation_date}}</td>
+                <td data-label="Amount">{{el.type}}</td>
+                <td data-label="Period">{{el.employee_evaluator.name}}</td>
+                <td data-label="Amount">{{el.qualification}}</td>
+                <td data-label="Period">{{el.feedback}}</td>
                 <td>
-                   
-                    <button type="button" class="btn btn-primary" (click)="addEvaluation()">Editar</button>
+                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="button" class="btn btn-primary" (click)="RegistrarPersonal()">Editar</button>
                 </td>
-
-
-            </tr>
-
-            <tr>
-                <td data-label="Nombre">Carlos Andres Sepulveda</td>
-                <td data-label="Fecha">08/01/1997</td>
-                <td data-label="Tipo">Rendimiento</td>
-                <td data-label="Evaluado">Luis Andres Gomez</td>
-                <td data-label="Calificacion">8.5</td>
-                <td data-label="Comentarios">Este mes obtubo un buen desempeño</td>
-
-
-                <td>
-                   
-                    <button type="button" class="btn btn-primary" (click)="addEvaluation()">Editar</button>
-                </td>
-
-            </tr>
-            <tr>
-                <td data-label="Nombre">Pedro Henao</td>
-                <td data-label="Fecha">04/01/1997</td>
-                <td data-label="Tipo">RRHH</td>
-                <td data-label="Evaluado">Carlos Andres Sepulveda</td>
-                <td data-label="Calificacion">1.5</td>
-                <td data-label="Comentarios">LLamado de Atención por vigencia de Capacitación</td>
-
-
-                <td>
-                   
-                    <button type="button" class="btn btn-primary" (click)="addEvaluation()">Editar</button>
-                </td>
-
-            </tr>
+              </tr>
 
         </tbody>
     </table>
