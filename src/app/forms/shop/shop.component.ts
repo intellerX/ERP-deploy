@@ -15,6 +15,12 @@ export class ShopComponent implements OnInit {
 
   constructor(private cookieService: CookieService, private router: Router) { }
 
+  checkpersonal = false;
+  checknomina = false;
+  checkinformes = false;
+  checkevaluacion = false;
+  total_price = 0;
+
   ngOnInit(): void {
 
 
@@ -49,6 +55,46 @@ export class ShopComponent implements OnInit {
       }
     }
 
+  }
+
+  checkPersonal(event: any) {
+    if (event == 'A') {
+      this.total_price += 50000;
+      
+    }
+    else{
+      this.total_price -= 50000;
+    }
+  }
+
+  checkNomina(event: any) {
+    if (event == 'A') {
+      this.total_price += 30000;
+      
+    }
+    else{
+      this.total_price -= 30000;
+    }
+  }
+
+  checkInformes(event: any) {
+    if (event == 'A') {
+      this.total_price += 50000;
+      
+    }
+    else{
+      this.total_price -= 50000;
+    }
+  }
+
+  checkEvaluacion(event: any) {
+    if (event == 'A') {
+      this.total_price += 50000;
+      
+    }
+    else{
+      this.total_price -= 50000;
+    }
   }
 
 }

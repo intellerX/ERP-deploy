@@ -6,7 +6,7 @@
     <div id="sidebar">
         <h3>CARRITO</h3>
         <div id="cart">
-            <span class="empty">Total: $ 0.0</span>
+            <span class="empty">Total: $ {{total_price}}</span>
         </div>
 
         <h3>CATEGORIAS</h3>
@@ -74,7 +74,7 @@
                             
                             <span class="product_price">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                                    <input class="form-check-input" [(ngModel)]="checkpersonal" (change)="checkPersonal(checkpersonal?'A':'B')" type="checkbox" value="" id="flexCheckDefault"/>
                                 </div>  
                                 $50.000
                                 
@@ -101,7 +101,7 @@
                         <div class="stats-container">
                             <span class="product_price">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                                    <input class="form-check-input" [(ngModel)]="checknomina" (change)="checkNomina(checknomina?'A':'B')" type="checkbox" value="" id="flexCheckDefault"/>
                                 </div>  
                                 $30.000</span>
                             <span class="product_name">MÓDULO NÓMINA</span>
@@ -123,7 +123,7 @@
                         <div class="stats-container">
                             <span class="product_price">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                                    <input class="form-check-input" [(ngModel)]="checkinformes" (change)="checkInformes(checkinformes?'A':'B')" type="checkbox" value="" id="flexCheckDefault"/>
                                 </div>  
                                 $50.000</span>
                             <span class="product_name">MÓDULO INFORMES</span>
@@ -145,7 +145,7 @@
                         <div class="stats-container">
                             <span class="product_price">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                                    <input class="form-check-input" [(ngModel)]="checkevaluacion" (change)="checkEvaluacion(checkevaluacion?'A':'B')" type="checkbox" value="" id="flexCheckDefault"/>
                                 </div>  
                                 $50.000</span>
                             <span class="product_name">MÓDULO EVALUACIÓN</span>

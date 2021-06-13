@@ -34,7 +34,37 @@ export class PersonalTableComponent implements OnInit {
 
   }
 
+  loadingToast(){
+    const LoadToast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        Swal.showLoading()
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+      }
+    })
+    
+    LoadToast.fire({
+      icon: 'question',
+      title: 'Cargando...'
+    })
+  }
+
+  buyToast() {
+    Swal.fire({
+      icon: 'info',
+      title: 'Puedes adquirir este modulo en la tienda',
+      footer: '<a href="/shop">Ir a la Tienda</a>'
+    })
+
+  }
+
   ngOnInit(): void {
+    this.loadingToast();
     console.log(this.personalService.get().subscribe({
       next: value => {
         console.log(value);
@@ -49,20 +79,14 @@ export class PersonalTableComponent implements OnInit {
           
         }
         else{
-          Swal.fire({
-            icon: 'error',
-            title: 'Debes comprar el módulo PERSONAL en la tienda'
-          })
+          this.buyToast();
         }
       
         
 
       }, error: error => {
         console.log(error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Debes comprar el módulo PERSONAL en la tienda'
-        })
+        this.buyToast();
       }
     }))
     
