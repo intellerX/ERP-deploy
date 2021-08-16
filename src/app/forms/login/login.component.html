@@ -1,0 +1,32 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+	type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<app-nav-bar></app-nav-bar>
+
+<div class="testbox">
+	<h1>Login</h1>
+
+	<form [formGroup]="form" (ngSubmit)="submit()">
+		<hr>
+		<div class="accounttype">
+			<input type="radio" value="None" id="radioOne" name="account" checked />
+			<label for="radioOne" class="radio" chec>Empresa</label>
+			<input type="radio" value="None" id="radioTwo" name="account" />
+			<label for="radioTwo" class="radio">Empleado</label>
+		</div>
+		<hr>
+		<label id="icon" for="name"><i class="icon-envelope "></i></label>
+		<input formControlName="email" type="text" name="email" id="email" placeholder="Email" required />
+		<label id="icon" for="name"><i class="icon-shield"></i></label>
+		<input formControlName="password" type="password" name="name" id="name" placeholder="Contraseña" required />
+		
+		<button class="button" type="submit" >Aceptar</button>
+
+		<br><br><br><hr>
+
+		<a class="text-dark" href="/register">Registra tu empresa</a>
+	</form>
+</div>
+
+<app-footer></app-footer>

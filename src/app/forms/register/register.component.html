@@ -1,0 +1,53 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
+	type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<app-nav-bar></app-nav-bar>
+
+<div class="testbox">
+	<h1>Regístrate</h1>
+
+	<form [formGroup]="form" (ngSubmit)="submit()">
+		<hr>
+		<label id="icon" for="email"><i class="icon-envelope "></i></label>
+		<input formControlName="email" type="text" name="email" id="email" placeholder="Email" required />
+
+
+		<label id="icon" for="name"><i class="icon-shield"></i></label>
+		<input formControlName="password" type="password" name="password" id="password" placeholder="Contraseña"
+			required />
+
+		<label id="icon" for="name"><i class="icon-shield"></i></label>
+		<input formControlName="password2" type="password" name="password2" id="password2"
+			placeholder="Repita Contraseña" required />
+
+		<hr>
+
+		<label id="icon" for="name"><i class="icon-subscript"></i></label>
+		<input formControlName="name" type="text" name="name" id="name" placeholder="Empresa" required />
+
+		<label id="icon" for="name"><i class="icon-puzzle-piece"></i></label>
+		<input formControlName="nit" type="text" name="nit" id="nit" placeholder="Nit" required />
+
+		<label id="icon" for="name"><i class="icon-bullseye"></i></label>
+		<input formControlName="state" type="text" name="departamento" id="departamento"
+			placeholder="Departamento" required />
+
+		<label id="icon" for="name"><i class="icon-bullseye"></i></label>
+		<input formControlName="city" type="text" name="ciudad" id="ciudad" placeholder="Ciudad" required />
+
+		<label id="icon" for="name"><i class="icon-bullseye"></i></label>
+		<input formControlName="address" type="text" name="direccion" id="direccion" placeholder="Dirección"
+			required />
+
+
+
+
+
+
+		<button class="button" type="submit" >Aceptar</button>
+		
+	</form>
+</div>
+
+<app-footer></app-footer>

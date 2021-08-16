@@ -1,0 +1,69 @@
+<nav class="navbar navbar-light  scrolling-navbar fixed-top gris">
+
+  <nav class="navbar navbar-light ">
+    <img [@slideInOut]="helpMenu" src="../../../assets/icons/Imagen1.png" class="animate__animated animate__backInDown"
+      style="display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    width: 70%;" alt="">
+
+  </nav>
+
+  <nav class="navbar navbar-expand-sm navbar-light  ">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/conocenos">¿Quiénes somos?</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            <img src="../../../assets/icons/Imagen7.png" width="17" height="20" alt="">
+            Servicios
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="inscripciones">
+              <img src="../../../assets/icons/Inscripciones.png" width="43" height="40" alt="">
+              Inscripción para Cursos</a>
+            <a class="dropdown-item" href="consulta">
+              <img src="../../../assets/icons/consulta.png" width="43" height="40" alt="">
+              Consulta Vigencia</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <img src="../../../assets/icons/ágora.png" width="43" height="40" alt="">
+              Agora</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">
+              <img src="../../../assets/icons/consulta.png" width="43" height="40" alt="">
+              Consultorio para empresas</a>
+            <a class="dropdown-item" href="#">
+              <img src="../../../assets/icons/aliado.png" width="43" height="40" alt="">
+              Busca tu aliado</a>
+
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cursos</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="/login">
+          <button class="btn btn-outline-orange my-2 my-sm-0" type="button"
+            style="background-color: orange; border-color: orange; border-radius:0;">
+            <img src="https://img.icons8.com/metro/2x/user-male.png" width="25" height="25" alt="">
+
+          </button>
+        </a>
+      </form>
+    </div>
+  </nav>
+</nav>

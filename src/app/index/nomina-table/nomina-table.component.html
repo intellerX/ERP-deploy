@@ -1,0 +1,68 @@
+<div class="container">
+    <h1>Nóminas</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Ingreso</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Botones</th>
+
+
+            </tr>
+        </thead>
+        <tbody *ngIf="module_actual">
+            <tr>
+                <td data-label="Account">Luis Andres Gomez</td>
+                <td data-label="Due Date">12'544.197</td>
+                <td data-label="Amount">Gerente</td>
+                
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="addNomina()">Editar</button>
+                    
+                </td>
+
+
+            </tr>
+
+            <tr>
+                <td data-label="Account">Carlos Andres Sepulveda</td>
+                <td data-label="Due Date">1'544.197</td>
+                <td data-label="Amount">Supervisor</td>
+                
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="addNomina()">Editar</button>
+                    
+                </td>
+
+            </tr>
+            <tr>
+                <td data-label="Account">Pedro Henao</td>
+                <td data-label="Due Date">2'544.197</td>
+                <td data-label="Amount">Jefe de Proyecto</td>
+                
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="addNomina()">Editar</button>
+                    
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+    <br>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+        <button type="button" class="btn btn-secondary">Atrás</button>
+        <button type="button" class="btn btn-secondary">Siguiente</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success" (click)="addNomina()">Agregar</button>
+    </div>
+
+
+</div>

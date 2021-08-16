@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Evaluaciones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let head of headElements">{{head}}</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="module_actual">
+            <tr *ngFor="let el of elements">
+                <td data-label="Account">{{el.employee_evaluated.name}}</td>
+                <td data-label="Due Date">{{el.creation_date}}</td>
+                <td data-label="Amount">{{el.type}}</td>
+                <td data-label="Period">{{el.employee_evaluator.name}}</td>
+                <td data-label="Amount">{{el.qualification}}</td>
+                <td data-label="Period">{{el.feedback}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="button" class="btn btn-primary" (click)="RegistrarPersonal()">Editar</button>
+                </td>
+              </tr>
+
+        </tbody>
+    </table>
+    <br>
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+        <button type="button" class="btn btn-secondary">Atrás</button>
+        <button type="button" class="btn btn-secondary">Siguiente</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-success" (click)="addEvaluation()">Agregar</button>
+    </div>
+
+
+</div>
